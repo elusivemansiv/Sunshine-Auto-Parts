@@ -174,8 +174,14 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-sm text-slate-500">
-            © {currentYear} Sunshine Auto Parts. All rights reserved.
+          <div className="flex flex-col gap-2 text-sm text-slate-500">
+            <div>© {currentYear} Sunshine Auto Parts. All rights reserved.</div>
+            <div>
+              Designed & Developed by{' '}
+              <a href="https://mansibahsan.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 transition-colors font-medium">
+                Mansib Ahsan
+              </a>
+            </div>
           </div>
           <div className="flex items-center gap-4">
             <a href="#" className="w-10 h-10 bg-[#1877F2]/10 rounded-lg flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2]/20 transition-colors">
