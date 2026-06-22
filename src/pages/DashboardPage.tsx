@@ -42,6 +42,7 @@ function OrdersContent() {
       trackingNumber: 'TRK948273651',
       shippingAddress: '123 Performance Way, Suite 100, Los Angeles, CA 90001',
       paymentMethod: 'Visa ending in 4242',
+      image: '/brembo_brake.png',
       products: [
         { name: 'Brembo GT Series Brake Kit', qty: 1, price: '$1,299.00' },
         { name: 'Motul RBF 600 Brake Fluid', qty: 2, price: '$0.00 (Included)' }
@@ -52,6 +53,7 @@ function OrdersContent() {
       trackingNumber: 'Pending',
       shippingAddress: '123 Performance Way, Suite 100, Los Angeles, CA 90001',
       paymentMethod: 'MasterCard ending in 8899',
+      image: '/vortech_supercharger.png',
       products: [
         { name: 'K&N Cold Air Intake', qty: 1, price: '$450.00' }
       ]
@@ -61,6 +63,7 @@ function OrdersContent() {
       trackingNumber: 'TRK710488299',
       shippingAddress: '123 Performance Way, Suite 100, Los Angeles, CA 90001',
       paymentMethod: 'PayPal',
+      image: '/apr_ecu_tune.png',
       products: [
         { name: 'NGK Iridium Spark Plugs', qty: 3, price: '$89.99' }
       ]
@@ -161,7 +164,7 @@ function OrdersContent() {
         {orders.map(order => (
           <div key={order.id} className="border border-slate-200 rounded-xl p-4 sm:p-6 hover:border-slate-300 transition-colors">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
+              <div className="flex-1">
                 <div className="flex items-center gap-3">
                   <span className="font-bold text-slate-900">{order.id}</span>
                   <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${
@@ -170,12 +173,15 @@ function OrdersContent() {
                     {order.status}
                   </span>
                 </div>
-                <div className="text-sm text-slate-500 mt-1">
+                <div className="text-sm text-slate-500 mt-1 mb-4">
                   Placed on {order.date} • {order.items} items
                 </div>
-              </div>
-              <div className="flex items-center justify-between sm:flex-col sm:items-end gap-2">
                 <span className="font-bold text-slate-900">{order.total}</span>
+              </div>
+              <div className="flex flex-col items-end gap-3 shrink-0">
+                <div className="w-20 h-16 rounded-xl overflow-hidden bg-slate-50 border border-slate-100">
+                  <img src={order.image} alt={`Order ${order.id}`} className="w-full h-full object-cover" />
+                </div>
                 <button 
                   onClick={() => setSelectedOrder(order.id)}
                   className="text-sm font-medium text-red-600 hover:text-red-500"

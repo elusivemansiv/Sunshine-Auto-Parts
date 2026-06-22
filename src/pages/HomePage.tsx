@@ -126,10 +126,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mobile Vehicle Search */}
-      <div className="lg:hidden relative z-30 -mt-24 px-4 pb-8 max-w-2xl mx-auto">
-        <VehicleSearch />
-      </div>
+
 
       {/* Categories */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -162,17 +159,17 @@ export default function HomePage() {
                 >
                   <Link
                     to={`/products?category=${category.name.toLowerCase()}`}
-                    className="group relative flex flex-col items-center justify-center overflow-hidden rounded-2xl aspect-[4/3] bg-white border border-slate-200 hover:border-red-500/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(239,68,68,0.15)] hover:-translate-y-1"
+                    className="group relative flex flex-col items-center justify-center overflow-hidden rounded-2xl aspect-square md:aspect-[4/3] bg-white border border-slate-200 hover:border-red-500/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(239,68,68,0.15)] hover:-translate-y-1"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
-                    <div className="relative z-10 w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-red-500/10 group-hover:scale-110 transition-all duration-300 mb-4 shadow-sm border border-slate-100 group-hover:border-red-500/30">
-                      <Icon className="w-8 h-8 text-slate-400 group-hover:text-red-500 transition-colors drop-shadow-sm" />
+                    <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-red-500/10 group-hover:scale-110 transition-all duration-300 mb-3 md:mb-4 shadow-sm border border-slate-100 group-hover:border-red-500/30">
+                      <Icon className="w-6 h-6 md:w-8 md:h-8 text-slate-400 group-hover:text-red-500 transition-colors drop-shadow-sm" />
                     </div>
                     
                     <div className="relative z-10 text-center">
-                      <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-red-500 transition-colors">{category.name}</h3>
-                      <p className="text-sm text-slate-500">{category.count} Products</p>
+                      <h3 className="text-base md:text-lg font-bold text-slate-900 mb-1 group-hover:text-red-500 transition-colors">{category.name}</h3>
+                      <p className="text-xs md:text-sm text-slate-500">{category.count} Products</p>
                     </div>
                   </Link>
                 </motion.div>

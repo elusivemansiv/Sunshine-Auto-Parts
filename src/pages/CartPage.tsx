@@ -157,10 +157,10 @@ export default function CartPage() {
                 </div>
               )}
 
-              <button className="w-full py-4 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-semibold rounded-xl transition-all flex items-center justify-center gap-2 mb-4 shadow-md">
+              <Link to="/checkout" className="w-full py-4 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-semibold rounded-xl transition-all flex items-center justify-center gap-2 mb-4 shadow-md">
                 Proceed to Checkout
                 <ArrowRight className="w-5 h-5" />
-              </button>
+              </Link>
 
               <Link
                 to="/products"
