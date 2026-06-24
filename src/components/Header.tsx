@@ -27,20 +27,19 @@ export default function Header({ isScrolled }: HeaderProps) {
   return (
     <>
       {/* Top Bar */}
-      {/* Top Bar */}
-      <div className="bg-white border-b border-slate-200 py-2 px-4 hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm text-slate-500">
+      <div className="bg-red-600 text-white py-2 px-4 hidden md:block">
+        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-red-500" />
-              <span>1-800-AUTO-PARTS</span>
+              <Phone className="w-4 h-4 text-white/80" />
+              <span className="font-medium">1-800-AUTO-PARTS</span>
             </span>
-            <span>Free Shipping on Orders $199+</span>
+            <span className="text-white/90">Free Shipping on Orders $199+</span>
           </div>
-          <div className="flex items-center gap-6">
-            <Link to="/track" className="hover:text-slate-900 transition-colors">Track Order</Link>
-            <Link to="/help" className="hover:text-slate-900 transition-colors">Help Center</Link>
-            <Link to="/deals" className="text-red-400 hover:text-red-300 transition-colors font-medium">Today's Deals</Link>
+          <div className="flex items-center gap-6 text-white/90">
+            <Link to="/track" className="hover:text-white transition-colors">Track Order</Link>
+            <Link to="/help" className="hover:text-white transition-colors">Help Center</Link>
+            <Link to="/deals" className="text-white font-semibold hover:text-white/80 transition-colors">Today's Deals</Link>
           </div>
         </div>
       </div>
@@ -64,9 +63,8 @@ export default function Header({ isScrolled }: HeaderProps) {
                 <div className="absolute inset-0 bg-red-500/30 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <div className="hidden sm:block">
-                <span className="text-xl font-bold font-heading text-slate-900">Sunshine</span>
-                <span className="text-xl font-bold font-heading text-red-500">Auto Parts</span>
-                <span className="block text-xs text-slate-500 -mt-1">Performance Specialists</span>
+                <span className="text-xl font-bold font-heading text-slate-900">Sunshine </span>
+                <span className="text-xl font-bold font-heading text-red-500">AutoParts</span>
               </div>
             </Link>
 

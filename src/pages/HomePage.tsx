@@ -26,7 +26,7 @@ export default function HomePage() {
       <section className="relative min-h-[60vh] lg:min-h-[90vh] flex items-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-transparent z-10" />
             <img
               src="/hero_garage_light.png"
               alt="Sunshine Auto Parts Performance Garage"
@@ -36,8 +36,8 @@ export default function HomePage() {
 
         {/* Animated Background Elements */}
         <div className="absolute inset-0 z-10">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-red-600/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-red-600/20 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
@@ -50,7 +50,7 @@ export default function HomePage() {
                 transition={{ delay: 0.1 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6"
               >
-                <span className="text-slate-900">Premium</span>
+                <span className="text-white">Premium</span>
                 <br />
                 <span className="gradient-text">Performance Parts</span>
               </motion.h1>
@@ -59,7 +59,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-lg text-slate-600 mb-8 max-w-lg"
+                className="text-lg text-slate-300 mb-8 max-w-lg"
               >
                 Transform your ride with top-tier automotive parts. Expert support, fast shipping, and unbeatable prices on the brands you trust.
               </motion.p>
@@ -91,7 +91,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mt-10 pt-10 border-t border-slate-200"
+                className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mt-10 pt-10 border-t border-white/10"
               >
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
@@ -101,19 +101,19 @@ export default function HomePage() {
                       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
                       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop'
                     ].map((url, i) => (
-                      <img key={i} src={url} alt={`Client ${i + 1}`} className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                      <img key={i} src={url} alt={`Client ${i + 1}`} className="w-8 h-8 rounded-full border-2 border-slate-900 object-cover" />
                     ))}
                   </div>
                   <div className="text-sm">
-                    <span className="text-slate-900 font-semibold">50K+</span>
-                    <span className="text-slate-500"> Happy Customers</span>
+                    <span className="text-white font-semibold">50K+</span>
+                    <span className="text-slate-400"> Happy Customers</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                   ))}
-                  <span className="text-sm text-slate-500 ml-1">4.9/5</span>
+                  <span className="text-sm text-slate-400 ml-1">4.9/5</span>
                 </div>
               </motion.div>
             </div>
@@ -311,31 +311,42 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6"
+                className="relative overflow-hidden bg-slate-900 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 group flex flex-col"
               >
-                <Quote className="w-8 h-8 text-red-500/30 mb-4" />
-                <p className="text-slate-700 mb-6">"{review.text}"</p>
-                <div className="flex items-center gap-4">
-                  <img
-                    src={review.avatar}
-                    alt={review.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <div className="font-semibold text-slate-900">{review.name}</div>
-                    <div className="text-sm text-slate-500">{review.date}</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-1 mt-4 pt-4 border-t border-slate-200">
+                {/* Large Background Quote */}
+                <Quote className="absolute -top-6 -right-6 w-40 h-40 text-white/5 transform -scale-x-100 group-hover:rotate-12 transition-transform duration-500" />
+                
+                {/* Rating */}
+                <div className="flex items-center gap-1 mb-6 relative z-10">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className={`w-4 h-4 ${
-                        i < review.rating ? 'text-yellow-400 fill-yellow-400' : 'text-slate-300'
+                      className={`w-5 h-5 ${
+                        i < review.rating ? 'text-red-500 fill-red-500' : 'text-slate-700'
                       }`}
                     />
                   ))}
-                  <span className="text-sm text-slate-500 ml-2">on {review.product}</span>
+                </div>
+
+                {/* Review Text */}
+                <p className="text-lg italic text-slate-300 mb-8 relative z-10 leading-relaxed grow">
+                  "{review.text}"
+                </p>
+
+                {/* Author Info */}
+                <div className="flex items-center gap-4 relative z-10 mt-auto pt-6 border-t border-white/10">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-red-500 rounded-full blur group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
+                    <img
+                      src={review.avatar}
+                      alt={review.name}
+                      className="relative w-12 h-12 rounded-full object-cover border-2 border-slate-800"
+                    />
+                  </div>
+                  <div>
+                    <div className="font-bold text-white group-hover:text-red-400 transition-colors">{review.name}</div>
+                    <div className="text-xs text-slate-400 mt-1">{review.date} • {review.product}</div>
+                  </div>
                 </div>
               </motion.div>
             ))}
